@@ -1,0 +1,51 @@
+.footer {
+  background: conic-gradient(
+    from 64.88deg at 0% 0%,
+    rgb(66, 81, 221),
+    rgb(128, 137, 219),
+    rgb(92, 106, 231),
+    rgb(128, 137, 219)
+  );
+}
+
+.footer__heading {
+  font-size: 2em;
+  font-weight: 800;
+  padding-right: 5rem;
+  color: whitesmoke;
+}
+
+.footer__subheading {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.footer__input:focus {
+  background-color: white !important;
+}
+
+.footer__btn {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--clr-bg);
+  padding: 1em;
+}
+
+.footer__link {
+  font-size: 0.9em;
+  color: whitesmoke;
+}
+
+.social__links a:hover {
+  transform: scale(1.1);
+}
+
+.copy-right {
+  font-size: 0.9em;
+}
+
+@media (max-width: 992px) {
+  .footer__btn {
+    padding: 0.8em 1em;
+  }
+}

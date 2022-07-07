@@ -1,0 +1,157 @@
+/* :root {
+  --clr-bg: #ffffff;
+  --clr-primary-light: rgb(207, 206, 226);
+  --clr-primary: rgb(86, 98, 206);
+  --clr-primary-alt: rgb(240, 223, 223);
+  --clr-dark: rgb(63, 54, 46);
+
+  --clr-btn-hover: rgb(192, 157, 121); */
+:root {
+  --clr-bg: #ffffff;
+  --clr-primary-light: rgb(207, 206, 226);
+  --clr-primary: rgb(53, 70, 224);
+  --clr-primary-alt: rgb(240, 223, 223);
+  --clr-dark: rgb(10, 10, 10);
+
+  --clr-btn-hover: rgb(2, 2, 2);
+
+  /* fonts */
+  --big-heading-ft-size: clamp(
+    3.41rem,
+    calc(3.41rem + ((1vw - 0.75rem) * 1.9778)),
+    4.3rem
+  );
+  --subheading-ft-size: clamp(
+    1.1rem,
+    calc(1.1rem + ((1vw - 0.75rem) * 0.2222)),
+    1.2rem
+  );
+  --heading-ft-size: clamp(
+    2rem,
+    calc(2rem + ((1vw - 0.48rem) * 0.6944)),
+    2.5rem
+  );
+  --body-ft-size: clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 0.2778)), 1.2rem);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg);
+  font-family: "Montserrat", sans-serif;
+  color: var(--clr-dark);
+  font-weight:400;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.bg__primary {
+  background-color: var(--clr-bg);
+}
+
+.bg__light-primary {
+  background-color: var(--clr-primary-light);
+  z-index: -10;
+}
+
+.bttn {
+  background-color: var(--clr-primary);
+  border-radius: 5px;
+}
+
+.bttn:hover {
+  background-color: var(--clr-btn-hover);
+}
+
+.form-control {
+  border: none !important;
+}
+
+/* ===== SECTION ====  */
+
+.hero__heading {
+  font-size: var(--big-heading-ft-size);
+  font-weight: bold;
+}
+
+.content__subheading {
+  font-size: var(--heading-ft-size);
+  font-weight: bold;
+}
+
+.content__subheading.underline::after {
+  content: "";
+  display: block;
+  height: 5px;
+  border-radius: 5px;
+  width: 140px;
+  background-color: var(--clr-primary-light);
+  margin: 9px 0 1.2em;
+}
+
+.content__desc {
+  font-size: var(--body-ft-size);
+  line-height: 32px;
+}
+
+/* INPUT FIELD */
+
+.form-container {
+  width: 90%;
+  padding: 5em 4em;
+  border-radius: 20px;
+}
+
+.form {
+  max-width: 700px;
+}
+
+.form-container label {
+  font-weight: 600;
+}
+
+.form-control:focus {
+  border: none;
+  box-shadow: none;
+  background-color: var(--clr-primary-light);
+}
+
+.input__field {
+  background-color: var(--clr-primary-light);
+}
+
+.form__btn {
+  font-weight: 600;
+  color: var(--clr-bg);
+  padding: 0.7em 2em;
+}
+
+.form-container {
+  background-color: rgba(233, 241, 243, 0.1);
+  border: 1px solid rgb(216, 217, 233);
+  box-shadow: 0px 1px 4px rgba(63, 54, 46, 0.15);
+}
+
+#join-us .form-container {
+  border: 1px solid rgb(246, 231, 214);
+  box-shadow: 0px 1px 4px rgba(63, 54, 46, 0.15);
+}

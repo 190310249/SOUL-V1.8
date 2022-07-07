@@ -1,0 +1,75 @@
+/* ==== ABOUT ==== */
+
+.about__hero-img {
+  width: 100%;
+}
+
+#about h1.watermark {
+  top: -20%;
+  left: 8%;
+  font-size: 13rem;
+  font-weight: bold;
+  color: hsla(30, 39%, 65%, 0.1);
+  z-index: -100;
+}
+
+.content__subheading .circle:after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  background-color: var(--clr-primary-light);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: -35%;
+  z-index: -10;
+}
+
+.u-shape {
+  top: -35%;
+  right: -25%;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  #about h1.watermark {
+    font-size: 10rem;
+    top: -10%;
+  }
+}
+@media (max-width: 576px) {
+  #about h1.watermark {
+    font-size: 7rem;
+    top: -3%;
+    left: 3%;
+  }
+}
+
+/*====== SVGS =====*/
+
+/* Our Motive */
+.l-shape {
+  bottom: -5%;
+  right: 6.7%;
+}
+
+@media (max-width: 1200px) {
+  /* Our Motive */
+  .l-shape {
+    bottom: 2%;
+    right: 2%;
+  }
+}
+
+/* ===== VOLUNTEERS ==== */
+
+.volunteer__content {
+  background-color: var(--clr-primary-alt);
+  padding: 32px;
+}
+
+.volunteer__content h6 {
+  font-size: 1.68rem;
+  font-weight: 700;
+  width: 200px;
+}

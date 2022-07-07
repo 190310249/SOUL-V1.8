@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'app/css/support.css' %}">
+{% endblock style %}
+
+{% block main %}
+<main>
+    <!-- Support us -->
+    <!-- Support us -->
+    <section>
+        <div class="container py-5 my-4">
+            <div class="row gx-lg-5">
+                <div class="col-lg-6 d-flex flex-column align-items-start justify-content-center">
+                    <h4 class="content__subheading">
+                        Why Donate?
+                    </h4>
+                    <p class="content__desc mt-4">
+                        Sattvic Soul Foundation, Odisha's most booming NGO has been working towards sustainable
+                        development goals.
+                        <br>
+                        <br>
+                        Thanks to the warm support of holy beings like you that we're able to impact many lives.
+                        <br>
+                        <br>
+                        All our efforts are made possible only because of your contributions.
+                        So Donate now!
+                    </p>
+                </div>
+                <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                    <div class="support__form mx-auto text-center mt-3 py-4">
+                        <h4 class="support__subheading mb-4 mt-3">
+                            Donate Now
+                        </h4>
+                        <form class="form mx-auto">
+                            <!-- <div class="d-flex justify-content-between">
+                                <div type="button" class="bttn donate__btn">
+                                    &#8377 50
+                                </div>
+                                <div type="button" class="bttn donate__btn">
+                                    &#8377 100
+                                </div>
+                                <div type="button" class="bttn donate__btn">
+                                    &#8377 500
+                                </div>
+                            </div> -->
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="option1"
+                                    checked>
+                                <label class="form-check-label" for="Radios2">
+                                    &#8377 50
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="option2">
+                                <label class="form-check-label" for="Radios2">
+                                    &#8377 100
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="option2">
+                                <label class="form-check-label" for="Radios2">
+                                    &#8377 500
+                                </label>
+                            </div>
+                            <div class="input-fields">
+                                <div class="text-start mt-4">
+                                    <div class="mb-3">
+                                        <label for="amount" class="form-label mb-1">Custom Amount</label>
+                                        <input type="text" class="form-control support__input" id="amount"
+                                            name="custom-amount" placeholder="&#8377" />
+                                    </div>
+                                </div>
+                                <div class="text-start mt-4">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label mb-1">Email</label>
+                                        <input type="email" class="form-control support__input" id="email"
+                                            name="email" />
+                                    </div>
+                                </div>
+                                <div class="text-start mt-4">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label mb-1">Name</label>
+                                        <input type="text" class="form-control support__input" id="name" name="name" />
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center mt-4 mb-3">
+                                    <a href="https://forms.gle/ge4VfCMue8dJcsYr7" target="_blank">
+                                    <button type="button" href="https://sattvicsoul.org/" class="bttn payment__btn">Next<svg
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="12"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg> </button></a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock main %}

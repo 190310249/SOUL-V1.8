@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'app/css/projects.css' %}">
+{% endblock style %}
+
+{% block main %}
+<main>
+    <div class="container" id="project">
+        <!-- START PROJECT SLIDER  -->
+        <div class="project-hero position-relative">
+            <h1 class="hero__heading">Our Project</h1>
+            <div id="carouselExampleCaptions" class="carousel slide img-fluid hero-image-1" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                        aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                        aria-label="Slide 8"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="{% url 'projects' %}"><img src="{% static 'app/assets/our-project/top-image.png' %}"
+                                class="d-block w-100" alt="Project-Hero-image"></a>
+                        <div class="carousel-caption  d-md-block">
+                            <h5><b>Sikhsya with Mission BarnoBodha</b></h5>
+                            <p>To bring back the interest towards learning.</p>
+                        </div>
+                    </div>
+                    {% for m in projslider %}
+                    <div class="carousel-item">
+                        <a href="{{m.Projectslider_link}}"><img src="{{m.Projectslider_image.url}}"
+                                class="d-block w-100" alt="..."></a>
+                        <div class="carousel-caption  d-md-block">
+                            <h5><b>{{m.name}}</b></h5>
+                            <p>{{m.Projectslider_desc}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <img src="{% static 'app/assets/our-project/top-image-mb.png' %}" alt="Project-Hero-image"
+                class="img-fluid hero-image-2">
+        </div>
+        <!-- END PROJECT SLIDER  -->
+
+
+        <!-- START PROJECT PAGE  -->
+        <h4 class="content__subheading mb-5 my-5" style="margin-left:35vw">Education</h4>
+        <p class="content__desc ">Sattvic SOUL (Sanjeevani for a Little Smile) wants to help those
+            people first, to come to a neutral life who are suffering for everyday necessities also. To
+            get them towards a normal healthy life, and in that way helping in the socio-economic growth
+            of our country. Sattvic SOUL, is a Process of Revolution, a step towards Change in Society
+            for everyone’s Betterment.
+        </p>
+        {% for n in pro %}
+        <div class="project my-5 py-5">
+            <h4 class="content__subheading mb-5">{{n.pr_name}}</h4>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="carouselExampleControls" class="carousel slide img-fluid " data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="{{n.pr_link}}"><img src="{{n.pr_image1.url}}" class="d-block w-100"
+                                        alt="..."></a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="{{n.pr_link}}"><img src="{{n.pr_image2.url}}" class="d-block w-100"
+                                        alt="..."></a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="{{n.pr_link}}"><img src="{{n.pr_image3.url}}" class="d-block w-100"
+                                        alt="..."></a>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column align-items-start justify-content-center mt-lg-0 mt-3">
+                    <p class="content__desc">
+                        {{n.pr_desc}}
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-lg-6 d-flex flex-column align-items-start justify-content-center order-lg-last">
+                    <img src="{% static 'app/assets/our-project/stats-1.png' %}" class="img-fluid" alt="...">
+                </div>
+                <div class="col-lg-6 d-flex flex-column align-items-start justify-content-center mt-lg-0 mt-3">
+                    <p class="content__desc">
+                        {{n.pr_about}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- END PROJECT PAGE  -->
+
+        <!-- Recents Project Carousel -->
+        <section class="my-5">
+
+            <div class="container py-5">
+                <h4 class="content__subheading underline">Recent Projects</h4>
+                <div class="owl-carousel" id="project-carousel">
+                    {% for o in Proj_recentventure %}
+                    <div class="item overflow-hidden">
+                        <div class="project__card">
+                            <img src="{{o.Project_recentventures_image.url}}" alt="project_image_1"
+                                class="project__img">
+                            <div class="project__info">
+                                <h6 class="project__info-title">
+                                    {{o.name}}
+                                </h6>
+                                <p class="project__info-desc">
+                                    {{o.Project_recentventures_desc}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main>
+{% endblock main %}

@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'app/css/projects.css' %}">
+{% endblock style %}
+
+{% block main %}
+<section class="my-5" id="join-us">
+    <div class="container py-5">
+        <div class="form-container mx-auto overflow-hidden text-center position-relative">
+            <h4 class="content__subheading">Join Us</h4>
+            <img src="{% static 'app/assets/form-zig-zack.svg' %}" alt="NA" class="form__zig-zack mt-2 mb-3">
+            <h6>(* For Mandatory Field)</h6>
+            <form class="form mx-auto" method="post" action="/join_us/">
+            {% csrf_token %}
+                <div class="row gx-md-5 text-start mt-4">
+                    <div class="col-md-6 mb-3">
+                        <label for="name1" class="form-label">* Name</label>
+                        <input type="text" class="form-control input__field" placeholder="Name" id="name1" name="name1" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email3" class="form-label">* Email</label>
+                        <input type="email" class="form-control input__field" placeholder="Email" id="email3" name="email3" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="gender" class="form-label">* Gender</label>
+                        {% comment %} <input type="text" class="form-control input__field" id="gender" name="gender" /> {% endcomment %}
+                        <select class="form-control input__field" id="gender" name="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Transgender">Transgender</option>
+                            <option value="None">Prefer Not To Say</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="wphone" class="form-label">* Whatsapp Number</label>
+                        <input type="text" class="form-control input__field" placeholder="Whatsapp Number" id="wphone" name="wphone" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="phone" class="form-label">* Phone Number</label>
+                        <input type="text" class="form-control input__field" placeholder="Contact Number" id="phone" name="phone" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="blood-group" class="form-label">Blood Group</label>
+                        {% comment %} <input type="text" class="form-control input__field" id="blood-group" name="blood-group" /> {% endcomment %}
+                        <select class="form-control input__field" id="blood-group" name="blood-group">
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="ABO+">ABO+</option>
+                            <option value="ABO-">ABO-</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="your_location" class="form-label">* Your Location</label>
+                        <input type="text" class="form-control input__field" placeholder="Location" id="your_location" name="your_location" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="source" class="form-label">Source</label>
+                        <select class="form-control input__field" id="source" name="source">
+                            <option value="Whatsapp">Whatsapp</option>
+                            <option value="facebook">facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="youtube">youtube</option>
+                            <option value="linkdiln">linkdiln</option>
+                            <option value="friends">friends</option>
+                            <option value="Own">Own</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        {% comment %} <input type="text" class="form-control input__field" id="source" name="source" /> {% endcomment %}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="refferer" class="form-label">Refference (OPT)</label>
+                        <input type="text" class="form-control input__field" placeholder="Name of the person" id="refferer" name="refferer" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="hg_education" class="form-label">* Higher Education</label>
+                        <input type="text" class="form-control input__field" placeholder="Pre-graduate or Graduate" id="hg_education" name="hg_education" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="profession" class="form-label">Profession</label>
+                        <select class="form-control input__field" id="profession" name="profession">
+                            <option value="Student">Student</option>
+                            <option value="Job">Job</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        {% comment %} <input type="text" class="form-control input__field" id="profession" name="profession" /> {% endcomment %}
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="org_name" class="form-label">Organisation Name (OPT)</label>
+                        <input type="text" class="form-control input__field" placeholder="Soul" id="org_name" name="org_name" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="hobbyskill" class="form-label">Hobby And Skill (OPT) </label>
+                        <input type="text" class="form-control input__field" placeholder="Interested Field" id="hobbyskill" name="hobbyskill" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="soc_link" class="form-label">Any Social Handle Link (OPT)</label>
+                        <input type="text" class="form-control input__field" placeholder="Insta Link" id="soc_link" name="soc_link" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="past_ngo" class="form-label">Past NGO (OPT) </label>
+                        <input type="text" class="form-control input__field" placeholder="Soul" id="past_ngo" name="past_ngo" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="birth_date" class="form-label">* D.O.B</label>
+                        <input type="Date" class="form-control input__field" placeholder="10.02.2000" id="birth_date" name="birth_date" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="query" class="form-label">Why You are Interested in Us? (OPT)</label>
+                        <textarea type="text" class="form-control input__field " placeholder="Tell About your interest" id="query" name="query"
+                            rows="4"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="bttn form__btn mt-4">
+                    Join Now
+                    <svg class="ms-1" width="18" height="20" viewBox="0 0 18 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.7922 1.20794C17.6908 1.10708 17.5628 1.03724 17.4231 1.00665C17.2835 0.976055 17.138 0.985973 17.0037 1.03524L0.484576 7.04221C0.342112 7.09624 0.219459 7.19234 0.132907 7.31774C0.0463546 7.44314 0 7.5919 0 7.74427C0 7.89664 0.0463546 8.0454 0.132907 8.1708C0.219459 8.2962 0.342112 8.3923 0.484576 8.44634L7.69294 11.3297L10.5763 18.538C10.6305 18.6742 10.7233 18.7916 10.8434 18.8757C10.9635 18.9597 11.1055 19.0068 11.2521 19.0111C11.4038 19.008 11.551 18.959 11.6744 18.8705C11.7977 18.782 11.8913 18.6583 11.9429 18.5155L17.9498 1.99635C18.001 1.86351 18.0133 1.71885 17.9854 1.57926C17.9575 1.43967 17.8905 1.31089 17.7922 1.20794ZM11.2521 16.1578L9.15714 10.9017L12.7538 7.30501L11.6951 6.24628L8.06838 9.87299L2.84231 7.74802L16.0051 2.99501L11.2521 16.1578Z"
+                            fill="#FFF2E5" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock main %}
